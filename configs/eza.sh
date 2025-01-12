@@ -2,6 +2,46 @@
 source ./utils/logger.sh
 
 install_eza() {
+    # First check if eza is installed
+    if ! command -v eza &> /dev/null; then
+        log "Eza is not installed. Installing eza..." "warning"
+        
+        case "$(uname -s)" in
+            Linux)
+                if command -v apt-get &> /dev/null; then
+                    sudo apt-get update
+                    sudo apt-get install -y eza
+                elif command -v pacman &> /dev/null; then
+                    sudo pacman -Sy --noconfirm eza
+                elif command -v dnf &> /dev/null; then
+                    sudo dnf install -y eza
+                else
+                    log "Could not install eza. Please install it manually" "error"
+                    return 1
+                fi
+                ;;
+            Darwin)
+                if command -v brew &> /dev/null; then
+                    brew install eza
+                else
+                    log "Homebrew is not installed. Please install it first" "error"
+                    return 1
+                fi
+                ;;
+            *)
+                log "Unsupported operating system" "error"
+                return 1
+                ;;
+        esac
+    fi
+
+    # Verify eza is now installed
+    if ! command -v eza &> /dev/null; then
+        log "Failed to install eza" "error"
+        return 1
+    fi
+
+    # Now proceed with configuration
     if ! grep -q "alias ls='eza" "$HOME/.zshrc"; then
         log "Adding eza configurations..." "info"
         cat >> "$HOME/.zshrc" << 'EOF'

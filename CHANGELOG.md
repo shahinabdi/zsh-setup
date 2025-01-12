@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2024-01-11
+
+### Changed
+- Renamed configuration files from .zsh to .sh for consistency
+- Enhanced eza configuration script to handle eza installation if not present
+
+### Fixed
+- Added automatic eza installation in eza configuration script
+- Fixed file extension consistency across the project
+
 ## [1.0.0] - 2024-01-11
 
 ### Added
