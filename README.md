@@ -15,12 +15,17 @@ A modular script to set up a complete Zsh development environment with various t
 
 ## Prerequisites
 
-The following packages need to be installed:
+### Required
+- git (for cloning and plugin management)
+- curl (for downloading components)
+- zsh (core shell requirement)
 
-- git
-- curl
-- zsh
-- unzip (for Nerd Fonts installation)
+### Optional
+These are only required if you choose to install their respective configurations:
+- eza (required if selecting eza configurations)
+- unzip (required for Nerd Fonts installation)
+
+Note: If eza isn't installed and you select eza configurations, the script will attempt to install it automatically on supported systems (requires sudo privileges).
 
 ## Installation
 
