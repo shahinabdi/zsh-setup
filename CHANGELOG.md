@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2024-01-31
+
+### Added
+- zsh-history-substring-search plugin for enhanced history search
+- Source command for history substring search plugin
+
+### Fixed
+- Fixed missing history-substring-search widget error
+- Ensure history search bindings work after plugin installation
+
 ## [1.0.2] - 2024-01-12
 
 ### Changed

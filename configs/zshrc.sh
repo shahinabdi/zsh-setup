@@ -1,3 +1,4 @@
+# configs/zshrc.sh
 #!/bin/bash
 source ./utils/logger.sh
 
@@ -14,6 +15,9 @@ setopt appendhistory
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
+
+# Source history substring search for key bindings
+source ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Key bindings
 bindkey '^[[A' history-substring-search-up
